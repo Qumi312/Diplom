@@ -1,5 +1,6 @@
 .venv
 .pylintrc
+.vscode
 __pychache__/
 db.sqlite3
 media/
