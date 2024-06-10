@@ -1,0 +1,5 @@
+.venv
+.pylintrc
+__pychache__/
+db.sqlite3
+media/
