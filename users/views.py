@@ -17,7 +17,10 @@ def login(request):
             if user:
                 auth.login(request,user)
                 messages.success(request, f'{username}, Вы вошли в аккаунт')
+                if request.POST.get('next', None):
+                    return HttpResponseRedirect(request.POST.get('next'))
                 return HttpResponseRedirect(reverse('main:index'))
+            
     else:
         form = UserLoginForm()
     context = {
@@ -65,3 +68,6 @@ def logout(request):
     messages.success(request, f'{request.user.username}, Вы вышли из аккаунта')
     auth.logout(request)
     return redirect(reverse('main:index'))
+
+def users_cart(request):
+    return render(request, 'users/users_cart.html')
