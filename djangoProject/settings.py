@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.postgres',
     
     'debug_toolbar',
-    
+    'users',
     'main.apps.MainConfig',
     'goods.apps.GoodsConfig',
     
@@ -65,7 +65,7 @@ ROOT_URLCONF = 'djangoProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'main/templates']
+        'DIRS': [BASE_DIR / 'templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
