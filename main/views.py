@@ -8,17 +8,16 @@ def index(request):
 
 
     context = {
-        'title': 'Home - Главная',
-        'content': 'Магазин мебели HOME',
+        'title': 'Sweet Home - Главная',
+        'content': 'Магазин мебели Sweet Home',
     }
     return render(request, 'main/index.html', context)
 
 
 def about(request):
     context = {
-        'title': 'Home - О нас',
+        'title': 'Sweet Home - О нас',
         'content': "О нас",
-        'text_on_page': 'Текст о том какой наш товар неплохой',
     }
     return render(request, 'main/about.html', context)
 

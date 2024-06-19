@@ -4,6 +4,9 @@
 {% block modal_cart %}
 {% include "includes/cart_button.html" %}
 {% endblock  %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'deps/css/my_footer_css.css' %}">
+{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
@@ -37,7 +40,7 @@
         </div>
         <!-- Описание товара -->
         <div class="card-body">
-            <p class="card-text">Цена: <strong>{{ product.sell_price }} $</strong></p>
+            <p class="card-text">Цена: <strong>{{ product.sell_price }}₽</strong></p>
             <h5 class="card-title">{{ product.name }}</h5>
             <p class="card-text">{{ product.description }}</p>
             <a href="{% url "cart:cart_add" %}" class="btn btn-dark add-to-cart"

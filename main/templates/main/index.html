@@ -1,22 +1,29 @@
 {% extends 'base.html' %}
 {% load static %}
 
-    {% block css %}
-    <link rel="stylesheet" href="{% static 'deps/css/my_footer_css.css' %}">
-    {% endblock %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'deps/css/my_footer_css.css' %}" />
+{% endblock %}
 
-    {% block modal_cart %}
-    {% include "includes/cart_button.html" %}
-    {% endblock  %}
+{% block modal_cart %}
+  {% include 'includes/cart_button.html' %}
+{% endblock %}
 
 {% block content %}
-    <h1 class="mt-5 pt-5"><strong>{{ content }}</strong></h1>
+<div class = 'text-center mt-5 pt-5 bg-white rounded custom-shadow '>
+  <h1 class="mt-2 pt-2 text-center mb-5 "><strong>{{ content }}</strong></h1>
+  <p class= 'index_page'><b>Здравствуйте!</b> <br>Мы рады приветствовать вас в нашем интернет-магазине мебели! <br>
+    У нас вы найдёте всё необходимое для создания уютного и стильного интерьера. <br>
+    На сайте представлен широкий ассортимент товаров: мягкая и корпусная мебель, кухни, столы и стулья, аксессуары и многое другое. <br>
+    Наша команда профессионалов всегда готова помочь вам с выбором и ответить на все интересующие вопросы. <br>
+    Приятных покупок!</p>
+</div>
 {% endblock %}
 
 {% block footer %}
     <footer class="py-4 bg-dark">
         <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; Home Python Hub Studio 2024</p>
+            <p class="m-0 text-center text-white">Copyright &copy; Sweet Home Qumi 2024</p>
         </div>
     </footer>
 {% endblock %}

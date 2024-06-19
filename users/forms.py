@@ -1,19 +1,19 @@
 from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm
-from django.template.defaultfilters import first
 
 from users.models import User
 
+
 class UserLoginForm(AuthenticationForm):
-    
-    username = forms.CharField(required=True, )
-    password = forms.CharField()
-    
+
     class Meta:
         model = User
-    fields = ['username', 'password']
+        fields = ['username', 'password']
 
+    username = forms.CharField()
+    password = forms.CharField()
 
+    
 class UserRegistrationForm(UserCreationForm):
 
     class Meta:
@@ -34,8 +34,7 @@ class UserRegistrationForm(UserCreationForm):
     password1 = forms.CharField()
     password2 = forms.CharField()
 
-class UserProfileForm(UserChangeForm):
-    
+class ProfileForm(UserChangeForm):
     class Meta:
         model = User
         fields = (
@@ -43,10 +42,10 @@ class UserProfileForm(UserChangeForm):
             "first_name",
             "last_name",
             "username",
-            "email",
-        )
-        image = forms.ImageField(required = False)
-        first_name = forms.CharField()
-        last_name = forms.CharField()
-        username = forms.CharField()
-        email = forms.CharField()
+            "email",)
+
+    image = forms.ImageField(required=False)
+    first_name = forms.CharField()
+    last_name = forms.CharField()
+    username = forms.CharField()
+    email = forms.CharField()
