@@ -32,7 +32,7 @@ urlpatterns = [
     path('orders/', include('orders.urls', namespace='orders')),
 
 ]
-
+handler404 = 'djangoProject.views.page_not_found_view'
 if settings.DEBUG:
     urlpatterns += [
        path('__debug__/', include('debug_toolbar.urls')), 

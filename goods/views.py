@@ -12,10 +12,12 @@ def catalog(request, category_slug=None):
     on_sale = request.GET.get('on_sale', None)
     order_by = request.GET.get('order_by', None)
     query = request.GET.get('q', None)
+    if query == '':
+            query = 'Пустой запрос'
     
     if category_slug == "all":
         goods = Products.objects.all()
-    elif query:
+    elif query :
         goods = q_search(query)
     else:
         goods = Products.objects.filter(category__slug=category_slug)
